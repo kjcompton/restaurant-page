@@ -1,3 +1,78 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+
 body {
-    background-color: seagreen;
+    background-color: rgb(254, 252, 247);
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content{
+    width: 1000px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(58, 58, 58);
+    color: rgb(255, 255, 255);
+    padding: 5rem;
+    border-radius: 20px;
+}
+
+
+.hero-heading {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subheading {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.hero-button {
+    font-size: 1.25rem;
+    padding: 15px 45px;
+    background-color: rgb(240, 229, 135);
+    border: 1px solid rgb(240, 229, 135);
+    border-radius: 5px;
+}
+
+.hero-button:hover {
+    cursor: pointer;
+    background-color: transparent;
+    color: rgb(240, 229, 135);;
+}
+
+.menu-item-container {
+    margin-bottom: 2rem;
+}
+
+.menu-item-title {
+    font-size: 1.5rem;
+}
+
+.menu-item-description {
+    font-size: 1rem;
+    color: #cdcdcd;
+}
+
+.about-paragraph {
+    font-size: 1.25rem;
+    text-align: left;
 }
