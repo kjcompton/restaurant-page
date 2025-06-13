@@ -1,25 +1,31 @@
 import "./styles.css";
-import { home } from "./home.js";
-import { menu } from "./menu.js";
-import { about } from "./about.js";
+import { home } from "./pages/home.js";
+import { menu } from "./pages/menu.js";
+import { about } from "./pages/about.js";
 
 const content = document.getElementById("content");
 
-
-function changeDisplay(e) {
-    content.innerHTML = "";
-    if (e.target.id === "home") {
-        home();
-    }
-    else if (e.target.id === "menu") {
-        menu();
-    }
-    else if (e.target.id === "about") {
-        about();
-    }
+let pages = {
+    home: home,
+    menu: menu,
+    about: about,
 }
 
-const header = document.querySelector("header");
-header.addEventListener("click", changeDisplay)
+const changeDisplay = function(page) {
+    const content = document.getElementById("content");
+    content.innerHTML = "";
+    const elements = pages[page]();
+    content.append(...elements);
+};
 
-home();
+document.getElementById("home").addEventListener("click", () => {
+    changeDisplay("home");
+});
+document.getElementById("menu").addEventListener("click", () => {
+    changeDisplay("menu");
+});
+document.getElementById("about").addEventListener("click", () => {
+    changeDisplay("about");
+});
+
+changeDisplay("home");
